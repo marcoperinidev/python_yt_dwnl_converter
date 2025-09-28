@@ -7,7 +7,7 @@ _
    
   install pytube with:
     
-     pip install pytube
+     pip install pytubefix
 
 Use: 
 

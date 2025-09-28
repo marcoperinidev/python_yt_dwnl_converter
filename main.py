@@ -1,4 +1,4 @@
-from pytube import YouTube
+from pytubefix import YouTube
 import os
 
 while True:
@@ -12,7 +12,9 @@ while True:
 
 print('Title:', video.title)
 print('Downloading...')
-out_path = video.streams.filter(only_audio=True).first().download()
+
+audio_stream = video.streams.get_audio_only()
+out_path = audio_stream.download()
 new_name = os.path.splitext(out_path)
 os.rename(out_path, new_name[0] + '.mp3')
 print('Done!')
